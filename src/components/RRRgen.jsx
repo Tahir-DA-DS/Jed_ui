@@ -27,6 +27,7 @@ function GenInvoice() {
   const handleCheckStatus = async () => {
     try {
       const status = await checkTransactionStatus(rrr);
+      console.log(status);
       alert(`Transaction status: ${status.message}`);
     } catch (error) {
       console.error('Error checking transaction status:', error);
