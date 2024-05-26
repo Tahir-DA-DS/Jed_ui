@@ -2,12 +2,10 @@ import axios from 'axios';
 import CryptoJS from 'crypto-js';
 
 const generateRRR = async (paymentDetails) => {
-  // const merchantId = process.env.REACT_APP_REMITA_MERCHANT_ID;
-  // const apiKey = process.env.REACT_APP_REMITA_API_KEY;
-  // const serviceTypeId = process.env.REACT_APP_REMITA_SERVICE_TYPE_ID;
-var merchantId = "2547916";
-var apiKey ="1946";
-var serviceTypeId ="4430731"
+
+  const merchantId = process.env.REACT_APP_REMITA_MERCHANT_ID;
+  const apiKey = process.env.REACT_APP_REMITA_API_KEY;
+  const serviceTypeId = process.env.REACT_APP_REMITA_SERVICE_TYPE_ID;
 
   const orderId = `JED_${new Date().getTime()}`;
 
@@ -47,7 +45,7 @@ var serviceTypeId ="4430731"
 
 const savePaymentDetails = async (paymentDetails) => {
   try {
-    const response = await axios.post('http://localhost:8080/api/payments', paymentDetails);
+    const response = await axios.post('https://jed-backend.onrender.com/api/payments', paymentDetails);
     console.log('Payment details saved:', response.data);
     return response.data;
   } catch (error) {
@@ -56,14 +54,14 @@ const savePaymentDetails = async (paymentDetails) => {
   }
 };
 
-const checkTransactionStatus = async (rrr) => {
-  try {
-    const response = await axios.get(`http://localhost:8080/api/check-transaction-status/${rrr}`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-};
+// const checkTransactionStatus = async (rrr) => {
+//   try {
+//     const response = await axios.get(`http://localhost:8080/api/check-transaction-status/${rrr}`);
+//     return response.data;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
 
 // const updatePaymentStatus = async (rrr, paymentStatus) => {
 //   try {
@@ -76,4 +74,4 @@ const checkTransactionStatus = async (rrr) => {
 //   }
 // };
 
-export { generateRRR, savePaymentDetails, checkTransactionStatus};
+export { generateRRR, savePaymentDetails};

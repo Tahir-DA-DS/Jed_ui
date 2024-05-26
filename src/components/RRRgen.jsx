@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { checkTransactionStatus, savePaymentDetails } from '../remitaServices';
+import {savePaymentDetails } from '../remitaServices';
 import loadRemitaScript from '../utils/loadremita';
 
 function GenInvoice() {
@@ -24,16 +24,16 @@ function GenInvoice() {
 
   const { rrr, amount, description } = state;
 
-  const handleCheckStatus = async () => {
-    try {
-      const status = await checkTransactionStatus(rrr);
-      console.log(status);
-      alert(`Transaction status: ${status.message}`);
-    } catch (error) {
-      console.error('Error checking transaction status:', error);
-      alert('Error checking transaction status');
-    }
-  };
+  // const handleCheckStatus = async () => {
+  //   try {
+  //     const status = await checkTransactionStatus(rrr);
+  //     console.log(status);
+  //     alert(`Transaction status: ${status.message}`);
+  //   } catch (error) {
+  //     console.error('Error checking transaction status:', error);
+  //     alert('Error checking transaction status');
+  //   }
+  // };
 
   const makePayment = () => {
     if (!remitaLoaded) {
@@ -45,7 +45,7 @@ function GenInvoice() {
       key: "QzAwMDAyNzEyNTl8MTEwNjE4NjF8OWZjOWYwNmMyZDk3MDRhYWM3YThiOThlNTNjZTE3ZjYxOTY5NDdmZWE1YzU3NDc0ZjE2ZDZjNTg1YWYxNWY3NWM4ZjMzNzZhNjNhZWZlOWQwNmJhNTFkMjIxYTRiMjYzZDkzNGQ3NTUxNDIxYWNlOGY4ZWEyODY3ZjlhNGUwYTY=",
       processRrr: true,
       transactionId: `TRANS_${new Date().getTime()}`, // Generate a new transactionId for each transaction
-      channel: "CARD,USSD", // Enable card and USSD channels
+      channel: "CARD USSD BANK QR MOBILE", // Enable card and USSD channels
       extendedData: {
         customFields: [
           {
@@ -76,7 +76,7 @@ function GenInvoice() {
       <p className="payment-success-info"><strong>Amount:</strong> {amount}</p>
       <p className="payment-success-message">Thank you!! kindly visit any bank branch to make your payment.</p>
       <button className="payment-success-button" onClick={makePayment}>Initiate Payment</button>
-      <button className="payment-success-button" onClick={handleCheckStatus}>Check Transaction Status</button>
+      {/* <button className="payment-success-button" onClick={handleCheckStatus}>Check Transaction Status</button> */}
       <button className="payment-success-button" onClick={() => navigate('/')}>Go to Home</button>
     </div>
   );
