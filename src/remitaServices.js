@@ -45,7 +45,7 @@ const generateRRR = async (paymentDetails) => {
 
 const savePaymentDetails = async (paymentDetails) => {
   try {
-    const response = await axios.post('http://localhost:8080/api/payments', paymentDetails);
+    const response = await axios.post('https://jed-backend.onrender.com/api/payments', paymentDetails);
     console.log('Payment details saved:', response.data);
     return response.data;
   } catch (error) {
