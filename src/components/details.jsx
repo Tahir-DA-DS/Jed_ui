@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState} from 'react';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { generateRRR, savePaymentDetails } from '../remitaServices';
 
 function DetailsPage() {
   const { state } = useLocation();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const formatCurrency = (value) => {
     return new Intl.NumberFormat('en-NG', {
@@ -16,6 +18,7 @@ function DetailsPage() {
   };
 
   const handlePaymentInitiation = async () => {
+    setLoading(true);
     const paymentDetails = {
       name: state.name,
       email: state.email,
@@ -40,6 +43,8 @@ function DetailsPage() {
       }
     } catch (error) {
       console.error("Failed to initiate payment:", error);
+    } finally {
+      setLoading(false); // Set loading to false when process is done
     }
   };
 
@@ -74,6 +79,7 @@ function DetailsPage() {
         <button className="button" onClick={handlePaymentInitiation}>
           Generate Remita Reference
         </button>
+        {loading && <ClipLoader color="#007bff" loading={loading} size={50} />} {/* Show spinner when loading */}
       </div>
     </div>
   );
