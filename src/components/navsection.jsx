@@ -5,9 +5,9 @@ function Header (){
       <img src={logo} alt="Skyrun Tech Logo" className="logo"/>
       {/* <div className="title">SKYRUN ELECTRIC POWER TECHNOLOGY NIG LTD</div> */}
         <div className="nav-links">
-          <a href="#products">Product</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="https://skyrunelectric-ng.onrender.com/store.html">Product</a>
+          <a href="https://skyrunelectric-ng.onrender.com/About.html">About</a>
+          <a href="https://skyrunelectric-ng.onrender.com/Contact.html">Contact</a>
         </div>
 </nav>
 
