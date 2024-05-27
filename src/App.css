@@ -7,64 +7,65 @@ body {
     background-repeat: no-repeat; /* Do not repeat the image */
     height: 100vh; /* Full height */
     width: 100vw; /* Full width */
-}
-.navbar {
+  }
+  
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: px 20px;
-    background-color: #ffffff;  /* Updated background color */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adding a subtle shadow for depth */
-}
-
-.logo {
-    height: 35px;  /* Keep size as needed */
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    height: 35px; /* Keep size as needed */
     width: auto;
     margin-right: 10px;
-}
-
-.nav-logo {
+  }
+  
+  .nav-logo {
     display: flex;
     align-items: center;
-}
-
-.nav-links a {
+  }
+  
+  .nav-links a {
     color: #007BFF; /* Updated text color for better visibility on white background */
     text-decoration: none;
     margin-left: 20px;
     font-size: 16px;
     transition: color 0.3s;
-}
-
-.nav-links a:hover {
+  }
+  
+  .nav-links a:hover {
     color: #0056b3; /* Darker blue on hover for contrast */
-}
-
-/* Adjust navbar on smaller screens */
-@media (max-width: 600px) {
+  }
+  
+  /* Adjust navbar on smaller screens */
+  @media (max-width: 600px) {
     .navbar {
-        flex-direction: column;
-        padding: 10px;
+      flex-direction: column;
+      padding: 10px;
     }
-
+  
     .nav-links {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
     }
-
+  
     .nav-links a {
-        display: block;
-        margin: 5px 0;
+      display: block;
+      margin: 5px 0;
     }
-
+  
     .logo {
-        margin-right: 0;
-        margin-bottom: 10px;
+      margin-right: 0;
+      margin-bottom: 10px;
     }
-}
-
-.formContainer {
+  }
+  
+  .formContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,32 +76,32 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
     background-color: #ffffff;
-}
-
-.inputField, .selectField {
+  }
+  
+  .inputField, .selectField {
     width: 100%;
     padding: 8px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 3px;
-}
-
-.label {
+  }
+  
+  .label {
     font-weight: bold;
     text-align: left;
     display: block;
     width: 100%;
     margin-bottom: 5px;
-}
-
-.errorText {
+  }
+  
+  .errorText {
     color: red;
     font-size: 0.8rem;
     margin-top: -5px;
     margin-bottom: 10px;
-}
-
-.submitButton {
+  }
+  
+  .submitButton {
     padding: 10px 15px;
     width: 100%;
     background-color: #0056b3;
@@ -110,42 +111,42 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-}
-
-.submitButton:hover {
+  }
+  
+  .submitButton:hover {
     background-color: #003975;
-}
-
-.title {
+  }
+  
+  .title {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
-}
-
-.subtitle {
+  }
+  
+  .subtitle {
     font-size: 18px;
     color: #555;
     margin-bottom: 15px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
     .formContainer {
-        width: 90%;
-        padding: 10px;
+      width: 90%;
+      padding: 10px;
     }
-
+  
     .inputField, .selectField {
-        padding: 8px;
+      padding: 8px;
     }
-
+  
     .submitButton {
-        padding: 8px 10px;
+      padding: 8px 10px;
     }
-}
-
-/* Details Page Styles */
-.details-container {
+  }
+  
+  /* Details Page Styles */
+  .details-container {
     display: flex;
     flex-direction: column;
     align-items: center; /* Keeps the container items centered */
@@ -156,32 +157,32 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     border-radius: 10px;
     background-color: #fff;
-}
-
-.details-title {
+  }
+  
+  .details-title {
     color: #007BFF;
     margin-bottom: 20px;
     width: 100%; /* Ensures the title spans the full width of the container */
     text-align: center; /* Center the title text */
-}
-
-.details-info {
+  }
+  
+  .details-info {
     font-size: 16px;
     margin: 10px 0;
     line-height: 1.5;
     width: 100%; /* Ensures the text spans the full width of the container */
     text-align: left; /* Aligns the text to the left */
     padding-left: 20px; /* Adds padding to give some space from the container edge */
-}
-
-.button-group {
+  }
+  
+  .button-group {
     margin-top: 20px;
     width: 100%; /* Aligns button group width with other content */
     display: flex;
     justify-content: center; /* Center aligns the buttons */
-}
-
-.button {
+  }
+  
+  .button {
     padding: 10px 20px;
     margin-right: 10px;
     border: none;
@@ -191,21 +192,21 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.button:hover {
+  }
+  
+  .button:hover {
     background-color: #0056b3;
-}
-
-.button-secondary {
+  }
+  
+  .button-secondary {
     background-color: #6c757d;
-}
-
-.button-secondary:hover {
+  }
+  
+  .button-secondary:hover {
     background-color: #5a6268;
-}
-
-.payment-success-container {
+  }
+  
+  .payment-success-container {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -74,7 +74,7 @@ function GenInvoice() {
       <p className="payment-success-info"><strong>Remita Retrieval Reference (RRR):</strong> {rrr}</p>
       <p className="payment-success-info"><strong>Description:</strong> {description}</p>
       <p className="payment-success-info"><strong>Amount:</strong> {amount}</p>
-      <p className="payment-success-message">Thank you!! kindly visit any bank branch to make your payment.</p>
+      <p className="payment-success-message">Thank you!! Kindly Proceed to Making Payment.<small>click the initiate payment button</small></p>
       <button className="payment-success-button" onClick={makePayment}>Initiate Payment</button>
       {/* <button className="payment-success-button" onClick={handleCheckStatus}>Check Transaction Status</button> */}
       <button className="payment-success-button" onClick={() => navigate('/')}>Go to Home</button>

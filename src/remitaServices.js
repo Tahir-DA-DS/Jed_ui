@@ -2,10 +2,10 @@ import axios from 'axios';
 import CryptoJS from 'crypto-js';
 
 const generateRRR = async (paymentDetails) => {
-
   const merchantId = process.env.REACT_APP_REMITA_MERCHANT_ID;
   const apiKey = process.env.REACT_APP_REMITA_API_KEY;
   const serviceTypeId = process.env.REACT_APP_REMITA_SERVICE_TYPE_ID;
+
 
   const orderId = `JED_${new Date().getTime()}`;
 
@@ -45,7 +45,7 @@ const generateRRR = async (paymentDetails) => {
 
 const savePaymentDetails = async (paymentDetails) => {
   try {
-    const response = await axios.post('https://jed-backend.onrender.com/api/payments', paymentDetails);
+    const response = await axios.post('http://localhost:8080/api/payments', paymentDetails);
     console.log('Payment details saved:', response.data);
     return response.data;
   } catch (error) {
