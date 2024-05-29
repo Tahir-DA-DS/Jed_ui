@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function dialog({ onClose }) {
+function Dialog({ onClose }) {
   return (
     <div className="dialog-overlay">
       <div className="dialog">
@@ -13,4 +13,4 @@ function dialog({ onClose }) {
   );
 }
 
-export default dialog
+export default Dialog;
